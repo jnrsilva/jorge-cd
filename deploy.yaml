@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: jorge-finalapp
+  name: jorge-finalapp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: jorge-finalapp
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jorge-finalapp
+    spec:
+      containers:
+      - image: farraposo/jorge_k8s_training_app_with_jenkins:5
+        name: jorge-k8s-training-app-with-jenkins-wbnp2
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
